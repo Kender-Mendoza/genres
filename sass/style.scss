@@ -1,1 +1,27 @@
-@import 'resources'
+@import 'resources';
+
+.input, 
+.output{
+    font-size: 1.1rem;
+    font-family: $font;
+    width: 100px;
+}
+
+.input{
+    border: none;
+    width: fit-content;
+    padding:0 5px;
+    width: calc(6rem + 5px);
+    border-bottom: black 2px solid;
+    outline: none;
+    display: inline-block;
+}
+
+.output{
+    display: none;
+    width: 100px;
+    height: 28px;
+    &:hover{
+        cursor: text;
+    }
+}
