@@ -15,7 +15,7 @@
     border-bottom: black 2px solid;
     outline: none;
     display: inline-block;
-}
+} 
 
 .output{
     display: none;
@@ -23,5 +23,14 @@
     height: 28px;
     &:hover{
         cursor: text;
+    }
+}
+
+.select-container{
+    display: inline-flex;
+    flex-wrap: wrap;
+
+    .btn-add{
+        order: 2; // LIVE HACK 
     }
 }

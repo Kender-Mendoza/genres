@@ -29,4 +29,10 @@ body {
   .output:hover {
     cursor: text; }
 
+.select-container {
+  display: inline-flex;
+  flex-wrap: wrap; }
+  .select-container .btn-add {
+    order: 2; }
+
 /*# sourceMappingURL=style.css.map */
