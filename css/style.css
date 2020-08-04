@@ -13,14 +13,24 @@ body {
   font-family: "Poppins", sans-serif;
   width: 100px; }
 
+.input-container {
+  display: flex;
+  flex-direction: column; }
+
 .input {
   border: none;
   width: fit-content;
   padding: 0 5px;
-  width: calc(6rem + 5px);
+  width: calc(10rem + 5px);
   border-bottom: black 2px solid;
   outline: none;
   display: inline-block; }
+
+.selector {
+  background-color: royalblue;
+  margin: 0.5em;
+  border-radius: 5px;
+  display: flex; }
 
 .output {
   display: none;
