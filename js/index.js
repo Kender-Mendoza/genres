@@ -1,5 +1,6 @@
 const container = document.getElementById('container')
 const btnAdd = document.getElementById('add')
+const textArea = document.getElementById('text-area')
 
 btnAdd.addEventListener('click', () => {
     selectorId = createIdToSelector()

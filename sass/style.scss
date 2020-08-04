@@ -46,3 +46,12 @@
         order: 2; // LIVE HACK 
     }
 }
+
+.text-area{
+    background-color: whitesmoke;
+    border: 1px solid gray;
+    border-radius:5px;
+    margin: $gutter;
+    width: 90%;
+    min-height: 100px;
+}
