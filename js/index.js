@@ -3,8 +3,9 @@ const btnAdd = document.getElementById('add')
 const textArea = document.getElementById('text-area')
 
 btnAdd.addEventListener('click', () => {
-    selectorId = createIdToSelector()
-    selector = createSelector(selectorId)
+    const selectorId = createIdToSelector()
+    const selector = createSelector(selectorId)
     container.insertAdjacentHTML('beforeend', selector)
-    addEventToSelector(selectorId)
+    const elements = selectElements(selectorId)
+    addEventToSelector(elements)
 })
