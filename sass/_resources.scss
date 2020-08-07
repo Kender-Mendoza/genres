@@ -26,4 +26,18 @@ $regular: 400;
 
 body{
     min-height: 100vh;
+    &,input,a,button{
+        color: $color-four;
+        font-family: $font;
+        font-weight: $regular;
+    }
+}
+
+button{ 
+    border: none; 
+    outline: none;
+}
+
+a{
+    color: $color-one !important;
 }

@@ -6,51 +6,56 @@
 
 body {
   min-height: 100vh; }
+  body, body input, body a, body button {
+    color: #232020;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400; }
 
-.input,
-.output {
-  font-size: 1.1rem;
-  font-family: "Poppins", sans-serif;
-  width: 100px; }
-
-.input-container {
-  display: flex;
-  flex-direction: column; }
-
-.input {
+button {
   border: none;
-  width: fit-content;
-  padding: 0 5px;
-  width: calc(10rem + 5px);
-  border-bottom: black 2px solid;
-  outline: none;
-  display: inline-block; }
+  outline: none; }
+
+a {
+  color: #ff7315 !important; }
+
+.container {
+  margin: 0 1em;
+  position: relative; }
+
+.with-min-heigth {
+  min-height: 200px; }
+
+.df-spacebw {
+  display: flex;
+  justify-content: space-between; }
 
 .selector {
-  background-color: royalblue;
-  margin: 0.5em;
-  border-radius: 5px;
-  display: flex; }
-
-.output {
-  display: none;
-  width: 100px;
-  height: 28px; }
-  .output:hover {
-    cursor: text; }
-
-.select-container {
   display: inline-flex;
-  flex-wrap: wrap; }
-  .select-container .btn-add {
-    order: 2; }
+  align-items: center;
+  background-color: #e7e7e7;
+  border-radius: 5px;
+  padding: 2.5px 5px;
+  margin-right: 5px;
+  margin-top: 5px; }
+  .selector-body {
+    display: flex;
+    flex-direction: column;
+    padding: 0 5px; }
+  .selector-delete {
+    color: #ff7315; }
+
+.btn {
+  border-radius: 5px;
+  padding: 5px 10px;
+  position: absolute;
+  right: 0;
+  bottom: 1em;
+  background-color: #ff7315; }
 
 .text-area {
-  background-color: whitesmoke;
-  border: 1px solid gray;
   border-radius: 5px;
-  margin: 1em;
-  width: 90%;
-  min-height: 100px; }
+  background-color: #e7e7e7;
+  margin-top: 1em;
+  padding: 5px; }
 
 /*# sourceMappingURL=style.css.map */

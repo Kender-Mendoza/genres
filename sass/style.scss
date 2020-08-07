@@ -1,57 +1,54 @@
 @import 'resources';
 
-.input, 
-.output{
-    font-size: 1.1rem;
-    font-family: $font;
-    width: 100px;
+.container{ 
+    margin: 0 $gutter;
+    position: relative;
 }
 
-.input-container{
-    display: flex;
-    flex-direction: column;
+.with-min-heigth{ 
+    min-height: 200px;
 }
 
-.input{
-    border: none;
-    width: fit-content;
-    padding:0 5px;
-    width: calc(10rem + 5px);
-    border-bottom: black 2px solid;
-    outline: none;
-    display: inline-block;
-} 
+// esta es como una malla
+.df-spacebw{ display: flex; justify-content: space-between; }
 
 .selector{
-    background-color: royalblue;
-    margin: $gutter / 2;
-    border-radius: 5px;
-    display: flex;
-}
-
-.output{
-    display: none;
-    width: 100px;
-    height: 28px;
-    &:hover{
-        cursor: text;
-    }
-}
-
-.select-container{
     display: inline-flex;
-    flex-wrap: wrap;
+    align-items: center;
 
-    .btn-add{
-        order: 2; // LIVE HACK 
+    background-color: darken($color: $color-two, $amount: 5%);
+
+    border-radius: 5px;
+    padding: 2.5px 5px;
+
+    margin-right: 5px;
+    margin-top: 5px;
+    
+    &-checkbox{
     }
+
+    &-body{
+        display: flex;
+        flex-direction: column;
+        padding: 0 5px;
+    }
+
+    &-delete{ color: $color-one; }
+}
+ 
+.btn{
+    border-radius: 5px;
+    padding: 5px 10px;
+
+    position: absolute;
+    right: 0;
+    bottom: $gutter;
+    background-color: $color-one;
 }
 
 .text-area{
-    background-color: whitesmoke;
-    border: 1px solid gray;
-    border-radius:5px;
-    margin: $gutter;
-    width: 90%;
-    min-height: 100px;
+    border-radius: 5px;
+    background-color: darken($color: $color-two, $amount: 5%);
+    margin-top: $gutter;
+    padding: 5px;
 }

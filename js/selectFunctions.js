@@ -126,13 +126,13 @@ const createIdToSelector = () => {
 const createSelector = (id) => {
     return `
     <div class="selector" id="${id.selector}">
-        <input type="checkbox" value="#" class="checkbox" id="${id.checkbox}">
-        <div class="input-container">
+        <input type="checkbox" class="selector-checkbox" id="${id.checkbox}">
+        <div class="selector-body">
             <input type="text" class="input" id="${id.input}" placeholder="Selector name" >
             <input type="text" class="input" id="${id.inputUrl}" placeholder="Selector url">
+            <p class="output" id="${id.output}"></p>
         </div>
-        <p class="output" id="${id.output}"></p>
-        <i class="fas fa-times btn-delete" id="${id.btnDelete}"></i>
+        <i class="fas fa-times selector-delete"" id="${id.btnDelete}"></i>
     </div>
     `
 }
