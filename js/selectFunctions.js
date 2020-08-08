@@ -1,7 +1,7 @@
 const checkboxVehabior = (element) => {
     if (element.checkbox.checked) {
         const id = createRamdomId(element.input.value, element.inputUrl.value)
-        const link = `<a href="${element.inputUrl.value}" id="${id}">${element.input.value}</a> `
+        const link = `<a href="${element.inputUrl.value}" target="_blank" id="${id}">${element.input.value}</a> `
         textArea.innerHTML += link
         element.checkbox.value = id
     } else {
