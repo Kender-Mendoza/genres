@@ -125,7 +125,7 @@ const createIdToSelector = () => {
 
 const createSelector = (id) => {
     return `
-    <div class="selector" id="${id.selector}">
+    <div class="selector selector-output" id="${id.selector}">
         <input type="checkbox" class="selector-checkbox" id="${id.checkbox}">
         <div class="selector-body">
             <input type="text" class="input" id="${id.input}" placeholder="Selector name" >

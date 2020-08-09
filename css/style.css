@@ -20,23 +20,19 @@ a {
 
 .container {
   margin: 0 1em;
-  position: relative; }
+  position: relative;
+  min-height: 100vh; }
 
-.with-min-heigth {
-  min-height: 200px; }
-
-.df-spacebw {
+.selector-container {
   display: flex;
-  justify-content: space-between; }
+  flex-wrap: wrap; }
 
 .selector {
   display: inline-flex;
   align-items: center;
   background-color: #e7e7e7;
   border-radius: 5px;
-  padding: 2.5px 5px;
-  margin-right: 5px;
-  margin-top: 5px; }
+  margin: 5px 5px 0 0; }
   .selector-body {
     display: flex;
     flex-direction: column;
@@ -44,18 +40,27 @@ a {
   .selector-delete {
     color: #ff7315; }
 
+.selector-output {
+  height: 30px;
+  padding: 5px; }
+
+.btn-container {
+  order: 2; }
+
 .btn {
   border-radius: 5px;
   padding: 5px 10px;
-  position: absolute;
-  right: 0;
-  bottom: 1em;
-  background-color: #ff7315; }
+  background-color: #ff7315;
+  margin: 5px 5px 0 0; }
 
 .text-area {
   border-radius: 5px;
   background-color: #e7e7e7;
   margin-top: 1em;
-  padding: 5px; }
+  padding: 5px;
+  min-height: 200px;
+  width: 100%;
+  position: absolute;
+  bottom: 1em; }
 
 /*# sourceMappingURL=style.css.map */

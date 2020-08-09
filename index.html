@@ -1,37 +1,31 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Genre</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/style.css" />
     <!-- CDN Fontawesome -->
-    <script src="https://kit.fontawesome.com/65874f9339.js" crossorigin="anonymous"></script>
-</head>
-<body>
-    <header class="container">
-        <h1>Genre</h1>
-    </header>
-    <div class="container with-min-heigth" id="container">
-        <!-- <div class="selector" id="selector1">
-            <input type="checkbox" value="#" class="selector-checkbox" id="checkbox1"> 
-            
-            <div class="selector-body">
-                <input type="text" class="input" id="input1" placeholder="Selector name">
-                <input type="text" class="input" id="input-url1" placeholder="Selector url">
-                <p class="output" id="output1"></p>
+    <script
+      src="https://kit.fontawesome.com/65874f9339.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+        <header class="head"><h1>Genre</h1></header>
+        
+        <div class="selector-container" id="container">
+            <div class="btn-container">
+                <button class="btn" id="add"><i class="fas fa-plus"></i></button>
             </div>
-            
-            <i class="fas fa-times selector-delete" id="btn-delete1"></i>
         </div>
-         -->
-        <button class="btn" id="add"><i class="fas fa-plus"></i></button>
+        
+        <div class="text-area" id="text-area"></div>
     </div>
-
-    <div class="container text-area with-min-heigth" id="text-area"></div>
 
     <script src="./js/index.js"></script>
     <script src="./js/selectFunctions.js"></script>
     <script src="./js/functions.js"></script>
-</body>
+  </body>
 </html>

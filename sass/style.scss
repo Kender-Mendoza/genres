@@ -3,27 +3,22 @@
 .container{ 
     margin: 0 $gutter;
     position: relative;
+    min-height: 100vh;
 }
 
-.with-min-heigth{ 
-    min-height: 200px;
+.selector-container{
+    display: flex;
+    flex-wrap: wrap;
 }
-
-// esta es como una malla
-.df-spacebw{ display: flex; justify-content: space-between; }
 
 .selector{
     display: inline-flex;
     align-items: center;
 
     background-color: darken($color: $color-two, $amount: 5%);
-
     border-radius: 5px;
-    padding: 2.5px 5px;
+    margin: 5px 5px 0 0;
 
-    margin-right: 5px;
-    margin-top: 5px;
-    
     &-checkbox{
     }
 
@@ -35,15 +30,25 @@
 
     &-delete{ color: $color-one; }
 }
- 
+
+.selector-input{
+
+}
+
+.selector-output{
+    height: 30px;
+    padding: 5px;
+}
+
+.btn-container{
+    order: 2;
+}
+
 .btn{
     border-radius: 5px;
     padding: 5px 10px;
-
-    position: absolute;
-    right: 0;
-    bottom: $gutter;
     background-color: $color-one;
+    margin: 5px 5px 0 0;
 }
 
 .text-area{
@@ -51,4 +56,9 @@
     background-color: darken($color: $color-two, $amount: 5%);
     margin-top: $gutter;
     padding: 5px;
+    min-height: 200px;
+    width: 100%;
+
+    position: absolute;
+    bottom: $gutter; 
 }
