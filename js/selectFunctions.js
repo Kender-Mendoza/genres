@@ -15,6 +15,8 @@ const inputVehabior = (element) => {
     element.input.style.display = 'none'
     element.inputUrl.style.display = 'none'
     element.output.style.display = 'inline-block'
+    
+    element.selector.classList.replace('selector-input-mode','selector-output-mode')
 
     localStorage.setItem(element.inputUrl.value, element.input.value)
 }
@@ -27,6 +29,8 @@ const outputVehabior = (element) => {
     element.input.style.display = 'inline'
     element.inputUrl.style.display = 'inline'
     element.input.focus()
+
+    element.selector.classList.replace('selector-output-mode','selector-input-mode')    
 }
 
 const btnDeleteVehabior = (element) => {
@@ -54,7 +58,8 @@ const addEventToSelector = (element) => {
         outputVehabior({
             input: element.input,
             inputUrl: element.inputUrl,
-            output: element.output
+            output: element.output,
+            selector: element.selector
         })
     })
     
@@ -64,7 +69,8 @@ const addEventToSelector = (element) => {
             inputVehabior({
                 input: element.input,
                 inputUrl: element.inputUrl,
-                output: element.output
+                output: element.output,
+                selector: element.selector
             })
         }
     })
@@ -74,7 +80,8 @@ const addEventToSelector = (element) => {
             inputVehabior({
                 input: element.input,
                 inputUrl: element.inputUrl,
-                output: element.output
+                output: element.output,
+                selector: element.selector
             })
         }
     })
@@ -93,7 +100,8 @@ const addEventToSelector = (element) => {
             inputVehabior({
                 input: element.input,
                 inputUrl: element.inputUrl,
-                output: element.output
+                output: element.output,
+                selector: element.selector
             })
         }
     })
@@ -125,13 +133,13 @@ const createIdToSelector = () => {
 
 const createSelector = (id) => {
     return `
-    <div class="selector" id="${id.selector}">
+    <div class="selector selector-input-mode" id="${id.selector}">
         <input type="checkbox" class="selector-checkbox" id="${id.checkbox}">
         <div class="selector-body">
             <input type="text" class="input" id="${id.input}" placeholder="Selector name" >
             <input type="text" class="input" id="${id.inputUrl}" placeholder="Selector url">
-            <p class="output" id="${id.output}"></p>
         </div>
+        <p class="output" id="${id.output}"></p>
         <i class="fas fa-times selector-delete"" id="${id.btnDelete}"></i>
     </div>
     `

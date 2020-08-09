@@ -1,49 +1,71 @@
 @import 'resources';
 
 .container{ 
-    margin: 0 $gutter;
+    margin: 0 $gutter * 3;
     position: relative;
+    min-height: 100vh;
 }
 
-.with-min-heigth{ 
-    min-height: 200px;
+.selector-container{
+    display: flex;
+    flex-wrap: wrap;
 }
-
-// esta es como una malla
-.df-spacebw{ display: flex; justify-content: space-between; }
 
 .selector{
     display: inline-flex;
     align-items: center;
-
     background-color: darken($color: $color-two, $amount: 5%);
-
     border-radius: 5px;
-    padding: 2.5px 5px;
+    margin: 5px 5px 0 0;
+    padding: 5px;
 
-    margin-right: 5px;
-    margin-top: 5px;
-    
-    &-checkbox{
-    }
-
-    &-body{
-        display: flex;
-        flex-direction: column;
+    .input{
+        border: none;
+        outline: none;
+        background: transparent;
+        border-bottom: 2px solid $color-one;
         padding: 0 5px;
     }
 
-    &-delete{ color: $color-one; }
-}
- 
-.btn{
-    border-radius: 5px;
-    padding: 5px 10px;
+    &-checkbox{ margin-right: 5px; }
+    
+    &-body{
+        display: flex;
+        flex-direction: column;
+    }
 
-    position: absolute;
-    right: 0;
-    bottom: $gutter;
-    background-color: $color-one;
+    &-delete{ 
+        color: $color-one; 
+        margin-left: 5px;
+        transition: transform 1s;
+
+        &:hover{
+            cursor: pointer;
+            color: darken($color: $color-one, $amount: 6%);;
+            transform: rotate(360deg);
+        }
+    }
+    // Clases especiales utilizadas por js
+    &-input-mode{ height: 55px;}
+    &-output-mode{ height: 35px;}
+}
+
+.btn-container{
+    order: 2;
+    
+    .btn{
+        border-radius: 5px;
+        padding: 7.5px 12.5px;
+        background-color: $color-one;
+        margin: 5px 5px 0 0;
+        transition: transform .3s;
+
+        &:hover{
+            background-color: darken($color: $color-one, $amount: 6%);
+            cursor: pointer;
+            transform: scale(1.1);
+        }
+    }
 }
 
 .text-area{
@@ -51,4 +73,9 @@
     background-color: darken($color: $color-two, $amount: 5%);
     margin-top: $gutter;
     padding: 5px;
+    min-height: 200px;
+    width: 100%;
+
+    position: absolute;
+    bottom: $gutter; 
 }
