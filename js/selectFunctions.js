@@ -1,7 +1,8 @@
 const checkboxVehabior = (element) => {
     if (element.checkbox.checked) {
+        const linksQuantity = document.getElementsByClassName('text-area-link').length
         const id = createRamdomId(element.input.value, element.inputUrl.value)
-        const link = `<a href="${element.inputUrl.value}" target="_blank" id="${id}">${element.input.value}</a> `
+        const link = `<a href="${element.inputUrl.value}" target="_blank" class="text-area-link" id="${id}">${linksQuantity === 0 ? ' ' : ', '}${element.input.value}</a>`
         textArea.innerHTML += link
         element.checkbox.value = id
     } else {

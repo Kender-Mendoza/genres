@@ -6,7 +6,7 @@
 
 body {
   min-height: 100vh; }
-  body, body input, body a, body button {
+  body, body input, body button {
     color: #232020;
     font-family: "Poppins", sans-serif;
     font-weight: 400; }
@@ -16,7 +16,7 @@ button {
   outline: none; }
 
 a {
-  color: #ff7315 !important; }
+  font-family: Verdana, Geneva, Tahoma, sans-serif; }
 
 .container {
   margin: 0 3em;
