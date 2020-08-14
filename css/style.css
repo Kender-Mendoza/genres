@@ -60,25 +60,52 @@ a {
 
 .btn-container {
   order: 2; }
-  .btn-container .btn {
-    border-radius: 5px;
-    padding: 7.5px 12.5px;
-    background-color: #ff7315;
-    margin: 5px 5px 0 0;
-    transition: transform .3s; }
-    .btn-container .btn:hover {
-      background-color: #f56300;
-      cursor: pointer;
-      transform: scale(1.1); }
 
-.text-area {
+.btn {
   border-radius: 5px;
-  background-color: #e7e7e7;
+  padding: 7.5px 12.5px;
+  background-color: #ff7315;
+  margin: 5px 0 0 0;
+  transition: transform .3s; }
+  .btn:hover {
+    background-color: #f56300;
+    cursor: pointer;
+    transform: scale3d(1.1, 1.1, 1); }
+
+.text-area-container {
   margin-top: 1em;
-  padding: 5px;
-  min-height: 200px;
   width: 100%;
   position: absolute;
   bottom: 1em; }
+  .text-area-container .btn-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 1em; }
+  .text-area-container .text-area {
+    border-radius: 5px;
+    background-color: #e7e7e7;
+    padding: 5px;
+    min-height: 200px;
+    width: 100%; }
+    .text-area-container .text-area > *::selection {
+      background: transparent; }
+
+.animate {
+  display: inline-block;
+  animation-name: bounce;
+  animation-timing-function: ease;
+  animation-duration: 2s; }
+
+@keyframes bounce {
+  0% {
+    transform: scale3d(1, 1, 1) translateY(0); }
+  10% {
+    transform: scale3d(1.1, 0.9, 1) translateY(0); }
+  30% {
+    transform: scale3d(0.9, 1.1, 1) translateY(-5px); }
+  50% {
+    transform: scale3d(1, 1, 1) translateY(0); }
+  100% {
+    transform: scale3d(1, 1, 1) translateY(0); } }
 
 /*# sourceMappingURL=style.css.map */
