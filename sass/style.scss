@@ -52,30 +52,61 @@
 
 .btn-container{
     order: 2;
-    
-    .btn{
-        border-radius: 5px;
-        padding: 7.5px 12.5px;
-        background-color: $color-one;
-        margin: 5px 5px 0 0;
-        transition: transform .3s;
+}
 
-        &:hover{
-            background-color: darken($color: $color-one, $amount: 6%);
-            cursor: pointer;
-            transform: scale(1.1);
+.btn{
+    border-radius: 5px;
+    padding: 7.5px 12.5px;
+    background-color: $color-one;
+    margin: 5px 0 0 0;
+    transition: transform .3s;
+
+    &:hover{
+        background-color: darken($color: $color-one, $amount: 6%);
+        cursor: pointer;
+        transform: scale3d(1.1,1.1,1);
+    }
+}
+
+
+
+.text-area-container{
+    margin-top: $gutter;
+    width: 100%;
+    
+    position: absolute;
+    bottom: $gutter; 
+    
+    .btn-container{
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: $gutter;
+    } 
+
+    .text-area{
+        border-radius: 5px;
+        background-color: darken($color: $color-two, $amount: 5%);
+        padding: 5px;
+        min-height: 200px;
+        width: 100%;
+
+        &>*::selection{
+            background: transparent;
         }
     }
 }
 
-.text-area{
-    border-radius: 5px;
-    background-color: darken($color: $color-two, $amount: 5%);
-    margin-top: $gutter;
-    padding: 5px;
-    min-height: 200px;
-    width: 100%;
+.animate{
+    display: inline-block;
+    animation-name: bounce;
+    animation-timing-function: ease;
+    animation-duration: 2s;
+}
 
-    position: absolute;
-    bottom: $gutter; 
+@keyframes bounce{
+    0%   { transform: scale3d(1,1,1)    translateY(0); }
+    10%  { transform: scale3d(1.1,.9,1) translateY(0); }
+    30%  { transform: scale3d(.9,1.1,1) translateY(-5px); }
+    50%  { transform: scale3d(1,1,1)    translateY(0); }
+    100% { transform: scale3d(1,1,1)    translateY(0); }
 }
