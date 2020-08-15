@@ -68,8 +68,6 @@
     }
 }
 
-
-
 .text-area-container{
     margin-top: $gutter;
     width: 100%;
@@ -79,8 +77,10 @@
     
     .btn-container{
         display: flex;
-        justify-content: flex-end;
         margin-bottom: $gutter;
+        .btn:nth-child(1){
+            margin-right: $gutter;
+        }
     } 
 
     .text-area{
