@@ -5,6 +5,7 @@ const checkboxVehabior = (element) => {
         const link = `<a href="${element.inputUrl.value}" target="_blank" class="text-area-link" id="${id}">${linksQuantity === 0 ? ' ' : ', '}${element.input.value}</a>`
         textArea.innerHTML += link
         element.checkbox.value = id
+        checkboxChecked.push(element.checkbox.id)
     } else {
         textArea.removeChild(document.getElementById(element.checkbox.value))
     }
