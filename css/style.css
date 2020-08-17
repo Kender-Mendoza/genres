@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap");
 * {
   padding: 0;
   margin: 0;
@@ -6,20 +6,50 @@
 
 body {
   min-height: 100vh; }
-  body, body input, body button {
-    color: #232020;
-    font-family: "Poppins", sans-serif;
+  body,
+  body input,
+  body button {
+    color: #17181c;
+    font-family: "Play", sans-serif;
     font-weight: 400; }
 
-button {
+.btn {
   border: none;
-  outline: none; }
+  outline: none;
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 10px;
+  transition: transform .3s; }
+  .btn:hover {
+    background-color: #f56300;
+    cursor: pointer;
+    transform: scale3d(1.1, 1.1, 1); }
 
-a {
+.link {
   font-family: Verdana, Geneva, Tahoma, sans-serif; }
 
+.head {
+  padding: 1em 0; }
+
 .container {
-  margin: 0 3em;
+  padding: 0 1em; }
+
+.purple {
+  background-color: #6155ab; }
+
+.cian {
+  background-color: #0badc4; }
+
+.blue {
+  background-color: #3451ff; }
+
+.rose {
+  background-color: #f7417c; }
+
+.orange {
+  background-color: #e79444; }
+
+.container {
   position: relative;
   min-height: 100vh; }
 
@@ -62,15 +92,8 @@ a {
   order: 2; }
 
 .btn {
-  border-radius: 5px;
-  padding: 7.5px 12.5px;
   background-color: #ff7315;
-  margin: 5px 0 0 0;
-  transition: transform .3s; }
-  .btn:hover {
-    background-color: #f56300;
-    cursor: pointer;
-    transform: scale3d(1.1, 1.1, 1); }
+  margin: 5px 0 0 0; }
 
 .text-area-container {
   margin-top: 1em;

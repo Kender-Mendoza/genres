@@ -1,43 +1,88 @@
 // font
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
 
 // colors palete
 $color-one: #ff7315;
 $color-two: #f4f4f4;
-$color-three: #3a3535;
-$color-four: #232020;
+$color-three: #202125;
+$color-four: #17181c;
+
 $color-white: #fff;
 $color-black: #000;
 
-// 
+//  
 $gutter: 1em;
 
 //
-$font: 'Poppins', sans-serif;
-$light: 300;
+$font: 'Play',
+sans-serif;
+$bold: 700;
 $regular: 400;
 
 // Reseter
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-body{
+body {
     min-height: 100vh;
-    &,input,button{
+
+    &,
+    input,
+    button {
         color: $color-four;
         font-family: $font;
         font-weight: $regular;
     }
 }
 
-button{ 
-    border: none; 
+// Usual Class
+.btn{
+    border: none;
     outline: none;
+    display: inline-flex;
+    align-items: center;
+    padding: 5px 10px;
+
+    transition: transform .3s;
+    &:hover{
+        background-color: darken($color: $color-one, $amount: 6%);
+        cursor: pointer;
+        transform: scale3d(1.1,1.1,1);
+    }
 }
 
-a{
+.link{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.head{
+    padding: $gutter 0;
+}
+
+.container{
+    padding: 0 $gutter;
+}
+
+// background colors for selectors
+.purple {
+    background-color: #6155ab;
+}
+
+.cian {
+    background-color: #0badc4;
+}
+
+.blue {
+    background-color: #3451ff;
+}
+
+.rose {
+    background-color: #f7417c;
+}
+
+.orange {
+    background-color: #e79444;
 }
