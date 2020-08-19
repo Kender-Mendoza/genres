@@ -1,22 +1,22 @@
 @import 'resources';
 
-.main{
+.main {
     background: $color-three;
     min-height: 50vh;
-    
-    .selector-container{
+
+    .selector-container {
         display: flex;
         flex-wrap: wrap;
-        
-        .btn{
+
+        .btn {
             order: 2;
             margin: 1px;
             color: $color-four;
             font-size: 1.05rem;
-        } 
+        }
     }
-    
-    .selector{
+
+    .selector {
         color: $color-white;
         display: inline-flex;
         align-items: center;
@@ -28,34 +28,37 @@
         background: #6155ab;
         border: 1px solid darken($color: #6155ab, $amount: 1%);
 
-        &:nth-child(2n){
+        &:nth-child(2n) {
             background: #0badc4;
             border: 1px solid darken($color: #0badc4, $amount: 1%);
         }
-        &:nth-child(3n){
+
+        &:nth-child(3n) {
             background: #3451ff;
             border: 1px solid darken($color: #3451ff, $amount: 1%);
         }
-        &:nth-child(4n){
+
+        &:nth-child(4n) {
             background: #f7417c;
             border: 1px solid darken($color: #f7417c, $amount: 1%);
         }
-        &:nth-child(5n){
+
+        &:nth-child(5n) {
             background: #e79444;
             border: 1px solid darken($color: #e79444, $amount: 1%);
         }
-        
-        .checkbox{
+
+        .checkbox {
             width: 17px;
             height: 17px;
         }
 
-        .body{
+        .body {
             display: flex;
             flex-direction: column;
             margin: 0 10px;
 
-            .input{
+            .input {
                 border: none;
                 outline: none;
                 background: rgba($color: $color-white, $alpha: .2);
@@ -66,57 +69,102 @@
                 padding: 2px 0 2px 5px;
             }
         }
-    
-        .delete{ 
+
+        .delete {
             font-size: 18px;
-            color: $color-white; 
+            color: $color-white;
             transition: transform .3s;
-    
-            &:hover{
+
+            &:hover {
                 cursor: pointer;
-                color: darken($color: $color-white, $amount: 6%);;
-                transform: scale3d(1.15,1.15,1);
+                color: darken($color: $color-white, $amount: 6%);
+                ;
+                transform: scale3d(1.15, 1.15, 1);
             }
         }
     }
 }
 
-.text-area-container{
+.text-area-container {
     margin-top: $gutter;
     width: 100%;
-    
-    .btn-container{
-        display: flex;
-        margin-bottom: $gutter;
-        .btn:nth-child(1){
-            margin-right: $gutter;
-        }
-    } 
 
-    .text-area{
-        border-radius: 5px;
-        background-color: darken($color: $color-two, $amount: 5%);
+    position: relative;
+    transition: left 1s;
+
+    overflow: hidden;
+
+    .btn-container {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+
+        transform: translateX(-100%);
+
+        transition: transform .5s;
+
+        .icon-btn {
+            display: block;
+            margin: 5px;
+            font-size: 1.5rem;
+            color: $color-three;
+            transition: transform .3s;
+
+            &:hover {
+                cursor: pointer;
+                color: $color-black;
+                transform: scale3d(1.1, 1.1, 1);
+
+            }
+        }
+    }
+
+    &:hover .btn-container {
+        transform: translateX(0);
+    }
+
+    .text-area {
+        background-color: $color-white;
         padding: 5px;
-        min-height: 200px;
+        min-height: 37vh;
         width: 100%;
 
-        &>*::selection{
+        .link-container {
             background: transparent;
+
+            &>*::selection {
+                background: transparent;
+            }
         }
     }
 }
 
-.animate{
+// when copy links
+.animate {
     display: inline-block;
     animation-name: bounce;
     animation-timing-function: ease;
     animation-duration: 2s;
 }
 
-@keyframes bounce{
-    0%   { transform: scale3d(1,1,1)    translateY(0); }
-    10%  { transform: scale3d(1.1,.9,1) translateY(0); }
-    30%  { transform: scale3d(.9,1.1,1) translateY(-5px); }
-    50%  { transform: scale3d(1,1,1)    translateY(0); }
-    100% { transform: scale3d(1,1,1)    translateY(0); }
+@keyframes bounce {
+    0% {
+        transform: scale3d(1, 1, 1) translateY(0);
+    }
+
+    10% {
+        transform: scale3d(1.1, .9, 1) translateY(0);
+    }
+
+    30% {
+        transform: scale3d(.9, 1.1, 1) translateY(-5px);
+    }
+
+    50% {
+        transform: scale3d(1, 1, 1) translateY(0);
+    }
+
+    100% {
+        transform: scale3d(1, 1, 1) translateY(0);
+    }
 }

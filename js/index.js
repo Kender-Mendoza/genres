@@ -39,9 +39,7 @@ copyLinks.addEventListener('click', () => {
     selection.addRange(range)
     document.execCommand('copy')
 
-    const textAreaLinks = document.getElementsByClassName('text-area-link')
-    for (const link of textAreaLinks) link.classList.add('animate')
-    setTimeout(() => {
-        for (const link of textAreaLinks) link.classList.remove('animate')
-    }, 1000)
+    textArea.classList.add('animate')
+
+    setTimeout(() => textArea.classList.remove('animate'), 1000)
 })

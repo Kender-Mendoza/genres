@@ -77,4 +77,5 @@ body {
 .container {
     padding: 0 $gutter;
     background: $color-four;
+    min-height: 100vh;
 }

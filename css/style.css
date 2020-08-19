@@ -39,7 +39,8 @@ body {
 
 .container {
   padding: 0 1em;
-  background: #17181c; }
+  background: #17181c;
+  min-height: 100vh; }
 
 .main {
   background: #202125;
@@ -101,20 +102,37 @@ body {
 
 .text-area-container {
   margin-top: 1em;
-  width: 100%; }
+  width: 100%;
+  position: relative;
+  transition: left 1s;
+  overflow: hidden; }
   .text-area-container .btn-container {
+    position: absolute;
     display: flex;
-    margin-bottom: 1em; }
-    .text-area-container .btn-container .btn:nth-child(1) {
-      margin-right: 1em; }
+    flex-direction: column;
+    transform: translateX(-100%);
+    transition: transform .5s; }
+    .text-area-container .btn-container .icon-btn {
+      display: block;
+      margin: 5px;
+      font-size: 1.5rem;
+      color: #202125;
+      transition: transform .3s; }
+      .text-area-container .btn-container .icon-btn:hover {
+        cursor: pointer;
+        color: #000;
+        transform: scale3d(1.1, 1.1, 1); }
+  .text-area-container:hover .btn-container {
+    transform: translateX(0); }
   .text-area-container .text-area {
-    border-radius: 5px;
-    background-color: #e7e7e7;
+    background-color: #fff;
     padding: 5px;
-    min-height: 200px;
+    min-height: 37vh;
     width: 100%; }
-    .text-area-container .text-area > *::selection {
+    .text-area-container .text-area .link-container {
       background: transparent; }
+      .text-area-container .text-area .link-container > *::selection {
+        background: transparent; }
 
 .animate {
   display: inline-block;
