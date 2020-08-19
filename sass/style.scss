@@ -1,70 +1,89 @@
 @import 'resources';
 
-.container{ 
-//    margin: 0 $gutter * 3;
-    position: relative;
-    min-height: 100vh;
-} 
-
-.selector-container{
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.selector{
-    display: inline-flex;
-    align-items: center;
-    background-color: darken($color: $color-two, $amount: 5%);
-    border-radius: 5px;
-    margin: 5px 5px 0 0;
-    padding: 5px;
-
-    .input{
-        border: none;
-        outline: none;
-        background: transparent;
-        border-bottom: 2px solid $color-one;
-        padding: 0 5px;
-    }
-
-    &-checkbox{ margin-right: 5px; }
+.main{
+    background: $color-three;
+    min-height: 50vh;
     
-    &-body{
+    .selector-container{
         display: flex;
-        flex-direction: column;
+        flex-wrap: wrap;
+        
+        .btn{
+            order: 2;
+            margin: 1px;
+            color: $color-four;
+            font-size: 1.05rem;
+        } 
     }
+    
+    .selector{
+        color: $color-white;
+        display: inline-flex;
+        align-items: center;
+        padding: 5px;
+        height: 60px;
+        border-radius: 3px;
+        margin: 1px;
 
-    &-delete{ 
-        color: $color-one; 
-        margin-left: 5px;
-        transition: transform 1s;
+        background: #6155ab;
+        border: 1px solid darken($color: #6155ab, $amount: 1%);
 
-        &:hover{
-            cursor: pointer;
-            color: darken($color: $color-one, $amount: 6%);;
-            transform: rotate(360deg);
+        &:nth-child(2n){
+            background: #0badc4;
+            border: 1px solid darken($color: #0badc4, $amount: 1%);
+        }
+        &:nth-child(3n){
+            background: #3451ff;
+            border: 1px solid darken($color: #3451ff, $amount: 1%);
+        }
+        &:nth-child(4n){
+            background: #f7417c;
+            border: 1px solid darken($color: #f7417c, $amount: 1%);
+        }
+        &:nth-child(5n){
+            background: #e79444;
+            border: 1px solid darken($color: #e79444, $amount: 1%);
+        }
+        
+        .checkbox{
+            width: 17px;
+            height: 17px;
+        }
+
+        .body{
+            display: flex;
+            flex-direction: column;
+            margin: 0 10px;
+
+            .input{
+                border: none;
+                outline: none;
+                background: rgba($color: $color-white, $alpha: .2);
+                font-size: 1.01rem;
+                color: $color-white;
+                margin-bottom: 2px;
+                border-radius: 2px;
+                padding: 2px 0 2px 5px;
+            }
+        }
+    
+        .delete{ 
+            font-size: 18px;
+            color: $color-white; 
+            transition: transform .3s;
+    
+            &:hover{
+                cursor: pointer;
+                color: darken($color: $color-white, $amount: 6%);;
+                transform: scale3d(1.15,1.15,1);
+            }
         }
     }
-    // Clases especiales utilizadas por js
-    &-input-mode{ height: 55px;}
-    &-output-mode{ height: 35px;}
-}
-
-.btn-container{
-    order: 2;
-}
-
-.btn{
-    background-color: $color-one;
-    margin: 5px 0 0 0;
 }
 
 .text-area-container{
     margin-top: $gutter;
     width: 100%;
-    
-    position: absolute;
-    bottom: $gutter; 
     
     .btn-container{
         display: flex;

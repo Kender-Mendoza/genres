@@ -7,9 +7,8 @@
 body {
   min-height: 100vh; }
   body,
-  body input,
-  body button {
-    color: #17181c;
+  body button,
+  body input {
     font-family: "Play", sans-serif;
     font-weight: 400; }
 
@@ -19,87 +18,90 @@ body {
   display: inline-flex;
   align-items: center;
   padding: 5px 10px;
-  transition: transform .3s; }
+  border-radius: 2px;
+  transition: transform .3s;
+  background-color: #fff;
+  border: 1px solid #fcfcfc; }
+  .btn > * {
+    transition: transform 0.5s; }
   .btn:hover {
-    background-color: #f56300;
     cursor: pointer;
-    transform: scale3d(1.1, 1.1, 1); }
+    background-color: #e6e6e6; }
+    .btn:hover > * {
+      transform: rotate(-90deg); }
 
 .link {
   font-family: Verdana, Geneva, Tahoma, sans-serif; }
 
 .head {
-  padding: 1em 0; }
+  padding: 1em 0;
+  color: #fff; }
 
 .container {
-  padding: 0 1em; }
+  padding: 0 1em;
+  background: #17181c; }
 
-.purple {
-  background-color: #6155ab; }
-
-.cian {
-  background-color: #0badc4; }
-
-.blue {
-  background-color: #3451ff; }
-
-.rose {
-  background-color: #f7417c; }
-
-.orange {
-  background-color: #e79444; }
-
-.container {
-  position: relative;
-  min-height: 100vh; }
-
-.selector-container {
-  display: flex;
-  flex-wrap: wrap; }
-
-.selector {
-  display: inline-flex;
-  align-items: center;
-  background-color: #e7e7e7;
-  border-radius: 5px;
-  margin: 5px 5px 0 0;
-  padding: 5px; }
-  .selector .input {
-    border: none;
-    outline: none;
-    background: transparent;
-    border-bottom: 2px solid #ff7315;
-    padding: 0 5px; }
-  .selector-checkbox {
-    margin-right: 5px; }
-  .selector-body {
+.main {
+  background: #202125;
+  min-height: 50vh; }
+  .main .selector-container {
     display: flex;
-    flex-direction: column; }
-  .selector-delete {
-    color: #ff7315;
-    margin-left: 5px;
-    transition: transform 1s; }
-    .selector-delete:hover {
-      cursor: pointer;
-      color: #f56300;
-      transform: rotate(360deg); }
-  .selector-input-mode {
-    height: 55px; }
-  .selector-output-mode {
-    height: 35px; }
-
-.btn-container {
-  order: 2; }
-
-.btn {
-  background-color: #ff7315;
-  margin: 5px 0 0 0; }
+    flex-wrap: wrap; }
+    .main .selector-container .btn {
+      order: 2;
+      margin: 1px;
+      color: #17181c;
+      font-size: 1.05rem; }
+  .main .selector {
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    padding: 5px;
+    height: 60px;
+    border-radius: 3px;
+    margin: 1px;
+    background: #6155ab;
+    border: 1px solid #5f53a8; }
+    .main .selector:nth-child(2n) {
+      background: #0badc4;
+      border: 1px solid #0ba9bf; }
+    .main .selector:nth-child(3n) {
+      background: #3451ff;
+      border: 1px solid #2f4dff; }
+    .main .selector:nth-child(4n) {
+      background: #f7417c;
+      border: 1px solid #f73c79; }
+    .main .selector:nth-child(5n) {
+      background: #e79444;
+      border: 1px solid #e6913f; }
+    .main .selector .checkbox {
+      width: 17px;
+      height: 17px; }
+    .main .selector .body {
+      display: flex;
+      flex-direction: column;
+      margin: 0 10px; }
+      .main .selector .body .input {
+        border: none;
+        outline: none;
+        background: rgba(255, 255, 255, 0.2);
+        font-size: 1.01rem;
+        color: #fff;
+        margin-bottom: 2px;
+        border-radius: 2px;
+        padding: 2px 0 2px 5px; }
+    .main .selector .delete {
+      font-size: 18px;
+      color: #fff;
+      transition: transform .3s; }
+      .main .selector .delete:hover {
+        cursor: pointer;
+        color: #f0f0f0;
+        transform: scale3d(1.15, 1.15, 1); }
 
 .text-area-container {
   margin-top: 1em;
-  width: 100%;
-  position: absolute;
-  bottom: 1em; }
+  width: 100%; }
   .text-area-container .btn-container {
     display: flex;
     margin-bottom: 1em; }

@@ -30,59 +30,51 @@ body {
     min-height: 100vh;
 
     &,
-    input,
-    button {
-        color: $color-four;
+    button,
+    input {
         font-family: $font;
         font-weight: $regular;
     }
 }
 
-// Usual Class
-.btn{
+.btn {
     border: none;
     outline: none;
+
     display: inline-flex;
     align-items: center;
+
     padding: 5px 10px;
+    border-radius: 2px;
 
     transition: transform .3s;
-    &:hover{
-        background-color: darken($color: $color-one, $amount: 6%);
+    background-color: $color-white;
+    border: 1px solid darken($color: $color-white, $amount: 1%);
+
+    &>* {
+        transition: transform .5s
+    }
+
+    &:hover {
         cursor: pointer;
-        transform: scale3d(1.1,1.1,1);
+        background-color: darken($color: $color-white, $amount: 10%);
+
+        &>* {
+            transform: rotate(-90deg);
+        }
     }
 }
 
-.link{
+.link {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.head{
+.head {
     padding: $gutter 0;
+    color: $color-white;
 }
 
-.container{
+.container {
     padding: 0 $gutter;
-}
-
-// background colors for selectors
-.purple {
-    background-color: #6155ab;
-}
-
-.cian {
-    background-color: #0badc4;
-}
-
-.blue {
-    background-color: #3451ff;
-}
-
-.rose {
-    background-color: #f7417c;
-}
-
-.orange {
-    background-color: #e79444;
+    background: $color-four;
 }

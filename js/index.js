@@ -15,9 +15,18 @@ btnAdd.addEventListener('click', () => {
 
 clearTextArea.addEventListener('click', () => {
     if (checkboxChecked.length > 0) {
-        checkboxChecked.forEach((element) => document.getElementById(element).checked = false)
+        checkboxChecked.forEach((element) => {
+            try {
+                document.getElementById(element.selectorId).style.backgroundColor = element.selectorBackground
+                document.getElementById(element.checkboxId).checked = false    
+            } catch (error) {
+                console.log(error)
+            }
+            
+        })
         textArea.innerHTML = ''
         checkboxChecked = []
+        sessionStorage.clear()
     }
 })
 

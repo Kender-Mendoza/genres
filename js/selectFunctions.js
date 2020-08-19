@@ -1,13 +1,29 @@
 const checkboxVehabior = (element) => {
+    let background
     if (element.checkbox.checked) {
         const linksQuantity = document.getElementsByClassName('text-area-link').length
         const id = createRamdomId(element.input.value, element.inputUrl.value)
         const link = `<a href="${element.inputUrl.value}" target="_blank" class="text-area-link" id="${id}">${linksQuantity === 0 ? ' ' : ', '}${element.input.value}</a>`
         textArea.innerHTML += link
         element.checkbox.value = id
-        checkboxChecked.push(element.checkbox.id)
+        background = window.getComputedStyle( element.selector ,null).getPropertyValue('background-color') 
+
+        checkboxChecked.push({
+            selectorId: element.selector.id,
+            checkboxId: element.checkbox.id,
+            selectorBackground: background 
+        })
+
+        // Changes background
+        element.selector.style.backgroundColor = 'transparent'
+        sessionStorage.setItem(id,background)
+
     } else {
-        textArea.removeChild(document.getElementById(element.checkbox.value))
+        const checkboxValue = element.checkbox.value
+        background = sessionStorage.getItem(checkboxValue)
+        textArea.removeChild(document.getElementById(checkboxValue))
+        element.selector.style.backgroundColor = background
+        sessionStorage.removeItem(checkboxValue)
     }
 }
 
@@ -113,7 +129,8 @@ const addEventToSelector = (element) => {
             checkboxVehabior({
                 input: element.input,
                 inputUrl: element.inputUrl,
-                checkbox: element.checkbox
+                checkbox: element.checkbox,
+                selector: element.selector
             })
         }
     })
@@ -136,13 +153,13 @@ const createIdToSelector = () => {
 const createSelector = (id) => {
     return `
     <div class="selector selector-input-mode" id="${id.selector}">
-        <input type="checkbox" class="selector-checkbox" id="${id.checkbox}">
-        <div class="selector-body">
+        <input type="checkbox" class="checkbox" id="${id.checkbox}">
+        <div class="body">
             <input type="text" class="input" id="${id.input}" placeholder="Selector name" >
             <input type="text" class="input" id="${id.inputUrl}" placeholder="Selector url">
+            <p class="output" id="${id.output}"></p>
         </div>
-        <p class="output" id="${id.output}"></p>
-        <i class="fas fa-times selector-delete"" id="${id.btnDelete}"></i>
+        <i class="fas fa-times delete"" id="${id.btnDelete}"></i>
     </div>
     `
 }
