@@ -13,21 +13,33 @@ const createRamdomId = (str1, str2) => {
     return `${piece1}${piece2}${randSize}`
 }
 
-const getOfStorange = () => {
+const orderStorange = () => {
+    const selectors = []
+
     for (const key in localStorage) {
         if (localStorage.hasOwnProperty(key)) {
-            const storangeElement = localStorage[key]
-
-            const selectorId = createIdToSelector()
-            const selector = createSelector(selectorId)
-            container.insertAdjacentHTML('beforeend', selector)
-            const elements = selectElements(selectorId)
-            elements.input.value = storangeElement
-            elements.inputUrl.value = key 
-            addEventToSelector(elements)
+            const item = localStorage[key];
+            selectors.push({
+                name: item,
+                url: key
+            })
         }
     }
-    
+
+    return selectors.sort((a, b) => (a.name < b.name) ? -1 : 1)
+}
+
+const getOfStorange = () => {
+    const storange = orderStorange()
+    storange.forEach((element) => {
+        const selectorId = createIdToSelector()
+        const selector = createSelector(selectorId)
+        container.insertAdjacentHTML('beforeend', selector)
+        const elements = selectElement(selectorId)
+        elements.input.value = element.name
+        elements.inputUrl.value = element.url
+        addEventToSelector(elements)
+    })
 }
 
 getOfStorange()

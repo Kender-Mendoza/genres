@@ -28,15 +28,18 @@ const checkboxVehabior = (element) => {
 }
 
 const inputVehabior = (element) => {
-    element.output.style.width = element.input.value ? 'auto' : '100px'
-    element.output.innerHTML = element.input.value
+    let inputValue = element.input.value
+    // first letter to uppercase
+    inputValue = inputValue.replace(inputValue[0],inputValue[0].toUpperCase()) 
+    element.output.style.width = inputValue ? 'auto' : '100px'
+    element.output.innerHTML = inputValue
     element.input.style.display = 'none'
     element.inputUrl.style.display = 'none'
     element.output.style.display = 'inline-block'
     
     element.selector.classList.replace('selector-input-mode','selector-output-mode')
 
-    localStorage.setItem(element.inputUrl.value, element.input.value)
+    localStorage.setItem(element.inputUrl.value, inputValue)
 }
 
 const outputVehabior = (element) => {
@@ -60,7 +63,7 @@ const btnDeleteVehabior = (element) => {
     element.inputUrl.value = ''
 }
 
-const selectElements = (id) => {
+const selectElement = (id) => {
     return {
         selector: document.getElementById(id.selector),
         checkbox: document.getElementById(id.checkbox),

@@ -90,7 +90,8 @@ body {
         color: #fff;
         margin-bottom: 2px;
         border-radius: 2px;
-        padding: 2px 0 2px 5px; }
+        padding: 2px 0 2px 5px;
+        text-transform: capitalize; }
     .main .selector .delete {
       font-size: 18px;
       color: #fff;
